@@ -33,12 +33,20 @@ let questions = [{
         choice3: "msg('Hello world');",
         choice4: "alert('Hello World');",
         answer: 4
+    },
+    {
+        question: "Who is the President of your Country",
+        choice1: "Atiku",
+        choice2: "Chief Ben",
+        choice3: "Bola Tinubu",
+        choice4: "Muhammed Buhari",
+        answer: 4
     }
 ];
 
 //CONSTANTS
 const CORRECT_BONUS = 10;
-const MAX_QUESTIONS = 3;
+const MAX_QUESTIONS = 4;
 
 startGame = () => {
     questionCounter = 0;
@@ -49,7 +57,7 @@ startGame = () => {
 
 getNewQuestion = () => {
     if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
-        localStorage.setItem("mostRecentSecore", score);
+        localStorage.setItem("mostRecentScore", score);
         //go to the end page
         return window.location.assign("./end.html")
     }
